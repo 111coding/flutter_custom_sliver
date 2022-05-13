@@ -1,7 +1,4 @@
 library flutter_custom_sliver;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'sliver/custom_sliver.dart';
+export 'sliver/custom_sliver_app_bar.dart';
