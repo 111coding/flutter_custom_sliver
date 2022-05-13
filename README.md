@@ -1,39 +1,53 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
+# Flutter Custom Sliver
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+#### You can use sliver more comfotable!!!
+#### Enjoy your coding life!!!
+
+!["screenshot"](https://raw.githubusercontent.com/111coding/flutter_custom_sliver/master/res/screenshot.gif)
+!["howtouseit"](https://raw.githubusercontent.com/111coding/flutter_custom_sliver/master/res/howto.jpg)
+
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yml
+dependencies:
+  flutter:
+    sdk: flutter
+
+    ...
+
+  flutter_custom_sliver: ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+...
+NestedScrollView(
+    physics: const ClampingScrollPhysics(),
+    headerSliverBuilder: (BuildContext context, bool boxIsScrolled) => [
+    /*
+     * =============== sliver begin ===============
+     */
+    CustomSliverAppBar(
+        appBar: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(children: const [Icon(Icons.arrow_back_ios)]),
+        ),
+        appBarBackgroundColor: Colors.white,
+        expandedSpace: Image.asset(
+            "assets/flutter-logo.jpg",
+            fit: BoxFit.fitHeight,
+        ),
+        openedSystemUiOverlayStyle: SystemUiOverlayStyle.light,
+        closedSystemUiOverlayStyle: SystemUiOverlayStyle.dark,
+    ),
+    /*
+     * =============== sliver end ===============
+     */
+],
+body: ...
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
